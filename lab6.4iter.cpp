@@ -29,8 +29,8 @@ int AbsMin(int* c, const int size) {
 int SumAfterZero(int* c, const int size) {
     int s = 0;
     for (int i = 0; i < size; i++) {
-        if (c[i] == 0) {
-            for (; i < size; i++) s += c[i];
+        if (abs(c[i]) == 0) {
+            for (; i < size; i++) s += abs(c[i]);
             break;
         }
     }
@@ -49,6 +49,7 @@ void Shuffle(int* c, const int size) {
     for (int i = 0; i < size; i++) {
         c[i] = h[i];
     }
+    delete []h;
 }
 
 int main() {
